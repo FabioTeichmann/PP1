@@ -79,7 +79,26 @@ Fill out the following table, mapping decimal numbers `0` through `15` to their 
 Explain how to calculate the number of bits required:
 <details>
 <summary>Your Answer</summary>
-Erase this text and write your answer here!
+Decimal | Binary
+ 0     |   0000    
+ 1     |   0001
+ 2     |   0010
+ 3     |   0011
+ 4     |   0100
+ 5     |   0101
+ 6     |   0110
+ 7     |   0111
+ 8     |   1000
+ 9     |   1001
+ 10    |   1010
+ 11    |   1011
+ 12    |   1100
+ 13    |   1101
+ 14    |   1110
+ 15    |   1111
+   
+Antwort: 2*2*2*2= 16 entspricht (2⁴) = log2 (16) =4. Man muss die 2 so oft mit sich selbst multiplizieren bis man auf die Anzahl n kommt.  (Hier n=16)
+
 </details>
 
 ---
@@ -107,13 +126,23 @@ Refer to the truth table of a 1-bit full adder:
 #### Your Task
 Create a truth table for a **2-bit adder** without carry-in. What are the possible inputs and outputs?
 
->   Your
->
->   table
->
->   goes
->
->   here!
+A   B   Q         B1    B0       A1    A0       Q2    Q1    Q0
+ 0   0   0         0      0        0      0      0      0     0
+ 0   1   1         0      0        0      1      0      0     1
+ 0   2   2         0      0        1      0      0      1     0
+ 0   3   3         0      0        1      1      0      1     1
+ 1   0   1         0      1        0      0      0      0     1
+ 1   1   2         0      1        0      1      0      1     0
+ 1   2   3         0      1        1      0      0      1     1
+ 1   3   4         0      1        1      1      1      0     0
+ 2   0   2         1      0        0      0      0      1     0
+ 2   1   3         1      0        0      1      0      1     1
+ 2   2   4         1      0        1      0      1      0     1
+ 2   3   5         1      0        1      1      1      0     1
+ 3   0   3         1      1        0      0      0      1     1
+ 3   1   4         1      1        0      1      1      0     0
+ 3   2   5         1      1        1      0      1      0     1
+ 3   3   6         1      1        1      1      1      1     0
 
 ---
 
@@ -128,11 +157,14 @@ Use the [K-Map method](https://github.com/STEMgraph/4b957490-badf-4264-b9f2-1b5a
 <details>
 <summary>The final functions</summary>
 
-Q<sub>0</sub> = .......
+Q<sub>0</sub> = (A0 ^ [ B0 nicht ] ) v ( [ A0 nicht ] ^ B0) = Q0
 
-Q<sub>1</sub> = .......
+Q<sub>1</sub> = (A1 ^ [B1 nicht] ^ [B0 nicht] ) v (A1 ^ A´[A0 nicht] ^ [B1 nicht] ) 
+                v ( [A1 nicht] ^A0 ^[B1 nicht] ^B0) v (A1 ^ A0 ^ B1 ^ B0) 
+                v ([A1 nicht] ^ [ A0 nicht] ^ B1) v ([A1 nicht] ^ B1 ^ [B0 nicht])= Q1
 
-C<sub>out</sub> = .......
+C<sub>out</sub> = (A1 ^B1) v (A1 ^ A0 ^ B0) 
+                     v (A1 ^ B1 ^ B0) = C_out
 
 </details>
 
@@ -143,7 +175,7 @@ Using your Boolean equations, build a logic network in [CircuitVerse](https://ci
 
 <details>
 <summary>Your solution</summary>
-A share link to your solution goes here: <a href=".................">Link!</a>
+A share link to your solution goes here: <a href="https://circuitverse.org/users/305563/projects/279763_fabio_teichmann">Link!</a>
 </details>
 
 ---
